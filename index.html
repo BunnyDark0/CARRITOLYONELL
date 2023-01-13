@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/popper.min.js"></script>
+    <link rel="stylsheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/e">
+
+    <title>Carrito Compras en JavaScript</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="row align-items-stretch justify-content-between">
+                <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                    <a class="navbar-brand" href="#" font-siza="8rem">Saga Falabella</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <img src="img/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="70px"
+                                    width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"></img>
+                                <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                    <table id="lista-carrito" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+
+                                    <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                                    <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
+                                        Compra</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="divbuscador"> <form role="search" method="get" id="searchform" class="form_search_movil" action=""></form></div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="barrita">
+            <h3 class="h3saga">Falabella
+                <svg class="svgsaga"></svg>
+            </h3>
+            <p class="p">Categorías Falabella</p>
+        </section>
+        <section class="seccion diseños" id="rueda">
+            <div class="rueda">
+                <div class="todo">
+                    <img src="img/rueda1.jpg" alt="imagen 4" class="img">
+                    <img src="img/rueda2.jpg" alt="imagen 4" class="img">
+                    <img src="img/rueda3.jpg" alt="imagen 4" class="img">
+                    <img src="img/rueda4.jpg" alt="imagen 4" class="img">
+                    <img src="img/rueda5.jpg" alt="imagen 4" class="img">
+                    <img src="img/rueda6.jpg" alt="imagen 5" class="img">
+                    <img src="img/rueda7.jpg" alt="imagen 6" class="img">
+                      
+                </div>
+                <ul class="puntos">
+                    <li class="punto activo"></li>
+                    <li class="punto"></li>
+                    <li class="punto"></li>
+                    <li class="punto"></li>
+                </ul>
+            </div>
+         </section>
+       <section class="fotos">
+    <div class="divfotos">
+        <article class="articlefotos">
+            <span class="spanfotos spi4">
+            <img src="img/i1.jpeg" alt="" class="imgfotos i4">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            <span class="spanfotos spi4">
+            <img src="img/i2.jpeg" alt="" class="imgfotos i4">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            <span class="spanfotos spi4">
+            <img src="img/i3.jpeg" alt="" class="imgfotos i4">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            <span class="spanfotos spi4">
+            <img src="img/i4.jpeg" alt="" class="imgfotos i4">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+        </article>
+    </div>
+    <div class="divfotos">
+        <article class="articlefotos">
+            <span class="spanfotos spi1">
+            <img src="img/i5.jpeg" alt="" class="imgfotos i1">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            </article>
+    </div>
+    <div class="divfotos">
+        <article class="articlefotos">
+            <span class="spanfotos spi2">
+            <img src="img/i6.jpeg" alt="" class="imgfotos i2">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            <span class="spanfotos spi2">
+            <img src="img/i7.jpeg" alt="" class="imgfotos i2">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+        </article>
+    </div>
+    <div class="divfotos">
+        <article class="articlefotos">
+            <span class="spanfotos spi1">
+            <img src="img/i8.jpeg" alt="" class="imgfotos i1">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+       </article>
+    </div>
+    <div class="divfotos">
+        <article class="articlefotos">
+            <span class="spanfotos spi1">
+            <img src="img/i9.jpeg" alt="" class="imgfotos i1">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+        </article>
+    </div>
+    <div class="divfotos">
+        <article class="articlefotos">
+            <span class="spanfotos spi1">
+            <img src="img/i10.jpeg" alt="" class="imgfotos i1">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+        </article>
+    </div>
+    <div class="divfotos">
+        <article class="articlefotos">
+            <span class="spanfotos spi1">
+            <img src="img/i11.jpeg" alt="" class="imgfotos i1">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+        </article>
+    </div>
+          <h3 class="h3saga"></h3>
+      <div class="divfotos gapf">
+        <article class="articlefotos">
+            <span class="spanfotos spi2">
+            <img src="img/i12.jpeg" alt="" class="imgfotos i2">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            <span class="spanfotos spi4">
+            <img src="img/i13.jpeg" alt="" class="imgfotos i4">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            <span class="spanfotos spi4">
+            <img src="img/i14.jpeg" alt="" class="imgfotos i4">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+        </article>
+      </div>
+      <div class="divfotos gapf">
+        <article class="articlefotos">
+            <span class="spanfotos spi4">
+            <img src="img/i15.jpeg" alt="" class="imgfotos i4">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            <span class="spanfotos spi4">
+            <img src="img/i16.jpeg" alt="" class="imgfotos i4">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            <span class="spanfotos spi2">
+            <img src="img/i17.jpeg" alt="" class="imgfotos i2">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+        </article>
+      </div>
+      <div class="divfotos gapf">
+        <article class="articlefotos">
+            <span class="spanfotos spi2">
+            <img src="img/i18.jpeg" alt="" class="imgfotos i2">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            <span class="spanfotos spi4">
+            <img src="img/i19.jpeg" alt="" class="imgfotos i4">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            <span class="spanfotos spi4">
+            <img src="img/i20.jpeg" alt="" class="imgfotos i4">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+        </article>
+      </div>
+      <div class="divfotos gapf">
+        <article class="articlefotos">
+            <span class="spanfotos spi4">
+            <img src="img/i21.jpeg" alt="" class="imgfotos i4">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            <span class="spanfotos spi4">
+            <img src="img/i22.jpeg" alt="" class="imgfotos i4">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a></span>
+
+            <span class="spanfotos spi2">
+            <img src="img/i23.jpeg" alt="" class="imgfotos i2">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a></span>
+
+        </article>
+      </div>
+      <div class="divfotos gapf">
+        <article class="articlefotos">
+            <span class="spanfotos spi2">
+            <img src="img/i24.jpeg" alt="" class="imgfotos i2">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            <span class="spanfotos spi4">
+            <img src="img/i25.jpeg" alt="" class="imgfotos i4">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            <span class="spanfotos spi4">
+            <img src="img/i26.jpeg" alt="" class="imgfotos i4">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+        </article>
+      </div>
+      <div class="divfotos gapf">
+        <article class="articlefotos">
+            <span class="spanfotos spi2">
+            <img src="img/i27.jpeg" alt="" class="imgfotos i2">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            <span class="spanfotos spi2">
+            <img src="img/i28.jpeg" alt="" class="imgfotos i2">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+        </article>
+    </div>
+      <div class="divfotos gapf">
+        <article class="articlefotos">
+            <span class="spanfotos spi1">
+            <img src="img/i29.jpeg" alt="" class="imgfotos i1">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+        </article>
+      </div>
+      <div class="divfotos gapf">
+        <article class="articlefotos">
+            <span class="spanfotos spi1">
+            <img src="img/i30.jpeg" alt="" class="imgfotos i1"> 
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+       </article>
+      </div>
+      <div class="divfotos gapf">
+        <article class="articlefotos">
+            <span class="spanfotos spi2">
+            <img src="img/i31.jpeg" alt="" class="imgfotos i2">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+            <span class="spanfotos spi2">
+            <img src="img/i32.jpeg" alt="" class="imgfotos i2">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+        </article>
+    </div>
+      <div class="divfotos">
+        <article class="articlefotos">
+            <span class="spanfotos spi1">
+            <img src="img/i33.jpeg" alt="" class="imgfotos i1">
+            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+        </span>
+        </article>
+      </div>    
+          <h3 class="h3saga"></h3>
+          <div class="divfotos">
+            <article class="articlefotos">
+                <span class="spanfotos spi4">
+                <img src="img/i34.jpeg" alt="" class="imgfotos i4">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+                <span class="spanfotos spi4">
+                <img src="img/i35.jpeg" alt="" class="imgfotos i4">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+                <span class="spanfotos spi4">
+                <img src="img/i36.jpeg" alt="" class="imgfotos i4">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+                <span class="spanfotos spi4">
+                <img src="img/i37.jpeg" alt="" class="imgfotos i4">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+            </article>
+        </div>
+          <h3 class="h3saga"></h3>
+          <div class="divfotos">
+            <article class="articlefotos">
+                <span class="spanfotos spi4">
+                <img src="img/i38.jpeg" alt="" class="imgfotos i4">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+                <span class="spanfotos spi4">
+                <img src="img/i39.jpeg" alt="" class="imgfotos i4">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+                <span class="spanfotos spi4">
+                <img src="img/i40.jpeg" alt="" class="imgfotos i4">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+                <span class="spanfotos spi4">
+                <img src="img/i41.jpeg" alt="" class="imgfotos i4">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+       </article>
+        </div>
+          <h3 class="h3saga"></h3>
+          <div class="divfotos">
+            <article class="articlefotos">
+                 <span class="spanfotos spi4">
+                <img src="img/i42.jpeg" alt="" class="imgfotos i4">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+                <span class="spanfotos spi4">
+                <img src="img/i43.jpeg" alt="" class="imgfotos i4">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+                <span class="spanfotos spi4">
+                <img src="img/i44.jpeg" alt="" class="imgfotos i4">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+                <span class="spanfotos spi4">
+                <img src="img/i45.jpeg" alt="" class="imgfotos i4">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+            </article>
+        </div>
+          <h4 class="h4saga"></h4>
+          <div class="divfotos">
+            <article class="articlefotos">
+                <span class="spanfotos spi5">
+                <img src="img/i46.jpeg" alt="" class="imgfotos i5">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+                <span class="spanfotos spi5">
+                <img src="img/i47.jpeg" alt="" class="imgfotos i5">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+                <span class="spanfotos spi5">
+                <img src="img/i48.jpeg" alt="" class="imgfotos i5">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+                <span class="spanfotos spi5">
+                <img src="img/i49.jpeg" alt="" class="imgfotos i5">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a></span>
+
+                <span class="spanfotos spi5">
+                <img src="img/i50.jpeg" alt="" class="imgfotos i5">
+                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </span>
+            </article>
+        </div>
+       </section>
+            
+    </main>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/pedido.js"></script>
+
+</body>
+
+</html>
